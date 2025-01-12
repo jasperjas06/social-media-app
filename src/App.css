@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+/* Basic styling for posts */
+.app {
+  font-family: Arial, sans-serif;
+  margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.new-post {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.new-post form input,
+.new-post form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.post {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.comments form input {
+  width: 80%;
+  padding: 5px;
+  margin-right: 10px;
 }
