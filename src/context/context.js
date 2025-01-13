@@ -24,7 +24,7 @@ export const UserProvider = ({ children }) => {
   const login = (userData) => {
     const { token } = userData; // Assuming `userData` contains the token
     setUser(userData); // Update the user state
-    localStorage.setItem('authToken', token); // Store token as a plain string
+    // localStorage.setItem('authToken', token); // Store token as a plain string
   };
 
   const logout = () => {

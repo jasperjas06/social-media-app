@@ -73,7 +73,7 @@ const Feed = () => {
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
   };
-
+  
   const sortedPosts = [...posts].sort((a, b) => {
     if (sortBy === 'likes') {
       return b.likes.length - a.likes.length; // Sort by likes in descending order
@@ -81,8 +81,12 @@ const Feed = () => {
     if (sortBy === 'comments') {
       return b.comments.length - a.comments.length; // Sort by comments in descending order
     }
+    if (sortBy === 'recent') {
+      return new Date(b.created_at) - new Date(a.created_at); // Sort by recent posts
+    }
     return 0;
   });
+  
 
   const handleLike = async (postId) => {
     try {
@@ -194,6 +198,7 @@ const Feed = () => {
           <Select value={sortBy} onChange={handleSortChange}>
             <MenuItem value="likes">Most Liked</MenuItem>
             <MenuItem value="comments">Most Commented</MenuItem>
+            <MenuItem value="recent">Most Recent</MenuItem>
           </Select>
         </FormControl>
       </Box>
